@@ -3,11 +3,10 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #000000;
 }
 
 header {
-    background-color: #333;
-    color: white;
     padding: 1em 0;
     text-align: center;
 }
@@ -23,7 +22,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: white; /* Header font color*/
     text-decoration: none;
 }
 
@@ -32,11 +31,12 @@ section {
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #ffffff;
 }
 
 .project, .portfolio-item, .blog-post {
     margin-bottom: 2em;
+    color:#ffffff
 }
 
 .portfolio-item img {
@@ -57,7 +57,7 @@ form label {
 
 form input, form textarea {
     padding: 0.5em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 button {
