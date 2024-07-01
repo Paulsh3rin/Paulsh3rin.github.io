@@ -34,14 +34,9 @@ h1, h2, h3 {
     color: #ffffff;
 }
 
-.project, .portfolio-item, .blog-post {
+.project, .blog-post {
     margin-bottom: 2em;
     color:#ffffff
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    height: auto;
 }
 
 form {
