@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Dashboard</h1>
+    <div id="filters" style="text-align:center;">
+        <label for="fromDate">From:</label>
+        <input type="date" id="fromDate">
+        <label for="toDate">To:</label>
+        <input type="date" id="toDate">
+        <button id="filterButton">SET</button>
+    </div>
+    <div style="text-align:center;">
+        <h2>Income: <span id="income">0</span></h2>
+        <h2>Expense: <span id="expense">0</span></h2>
+    </div>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="{{ url_for('send_static', path='js/script.js') }}"></script>
+
+</body>
+</html>
