@@ -1,23 +1,27 @@
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    if (name && email && message) {
-        alert('Thank you for your message!');
-    } else {
-        alert('Please fill out all fields.');
-    }
-});
-
-// New code for date filters, income, expense, and chart rendering
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure the contact form exists before adding an event listener
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Thank you for your message!');
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    }
+
     // Check if we are on the dashboard page
-    if (document.getElementById('filterButton')) {
+    const filterButton = document.getElementById('filterButton');
+    if (filterButton) {
         // Event listener for the filter button
-        document.getElementById('filterButton').addEventListener('click', fetchDataAndRenderChart);
+        filterButton.addEventListener('click', fetchDataAndRenderChart);
     }
 });
 
@@ -25,13 +29,21 @@ function fetchDataAndRenderChart() {
     const fromDate = document.getElementById('fromDate').value;
     const toDate = document.getElementById('toDate').value;
 
+    console.log(`Fetching data from ${fromDate} to ${toDate}`);
+
     fetch(`/api/data?fromDate=${fromDate}&toDate=${toDate}`)
-        .then(response => response.json())
+        .then(response => {
+            console.log('Fetch response:', response);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            // Update income and expense
+            console.log('API response:', data);
+
             updateIncomeAndExpense(data);
 
-            // Render the chart
             renderChart(data.transactions);
         })
         .catch(error => console.error('Error fetching data:', error));
@@ -41,16 +53,16 @@ function updateIncomeAndExpense(data) {
     const incomeElement = document.getElementById('income');
     const expenseElement = document.getElementById('expense');
 
-    incomeElement.textContent = data.income.toFixed(2); // Ensure toFixed(2) for formatting
-    expenseElement.textContent = data.expense.toFixed(2); // Ensure toFixed(2) for formatting
+    incomeElement.textContent = data.income.toFixed(2);
+    expenseElement.textContent = data.expense.toFixed(2);
 }
 
-function renderChart(data) {
-    const labels = data.map(item => item.Date);
-    const debitData = data.map(item => item.Debit);
+function renderChart(transactions) {
+    const labels = transactions.map(item => item.Date); // Ensure 'Date' matches your data's date field
+    const debitData = transactions.map(item => item.Debit); // Ensure 'Debit' matches your data's debit field
 
     const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
+    new Chart(ctx, {
         type: 'line', // or 'bar', 'pie', etc.
         data: {
             labels: labels,
