@@ -1,11 +1,16 @@
 from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import logging
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
 # Configure the SQLAlchemy part of the app instance
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Select*From@localhost/BANKING'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Create the SQLAlchemy db instance
