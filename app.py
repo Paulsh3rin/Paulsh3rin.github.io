@@ -1,10 +1,10 @@
 from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import func
+import logging
 
 app = Flask(__name__)
 
-#Configure the SQLAlchemy part of the app instance
+# Configure the SQLAlchemy part of the app instance
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Select*From@localhost/BANKING'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -20,7 +20,6 @@ class Transaction(db.Model):
     Credit = db.Column(db.Float)
     account = db.Column(db.String(255))
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -33,33 +32,30 @@ def dashboard():
 def get_data():
     from_date = request.args.get('fromDate')
     to_date = request.args.get('toDate')
+    
+    logging.info(f"API called with fromDate={from_date} and toDate={to_date}")
 
-    query = Transaction.query
-    if from_date:
-        query = query.filter(Transaction.date >= from_date)
-    if to_date:
-        query = query.filter(Transaction.date <= to_date)
+    transactions = Transaction.query.filter(Transaction.Date >= from_date, Transaction.Date <= to_date).all()
 
-    transactions = query.all()
-
-    income = query.with_entities(func.sum(Transaction.Credit)).scalar() or 0
-    expense = query.with_entities(func.sum(Transaction.Debit)).scalar() or 0
-
-    data = {
+    income = sum(transaction.Credit for transaction in transactions)
+    expense = sum(transaction.Debit for transaction in transactions)
+    transactions_list = [
+        {
+            'Date': transaction.Date.strftime('%Y-%m-%d'),
+            'vendors': transaction.vendors,
+            'Debit': transaction.Debit,
+            'Credit': transaction.Credit,
+            'account': transaction.account
+        }
+        for transaction in transactions
+    ]
+    
+    return jsonify({
         'income': income,
         'expense': expense,
-        'transactions': [{
-            'date': t.Date.strftime('%Y-%m-%d'),
-            'debit': t.Debit,
-            'credit': t.Credit,
-            'account': t.account
-        } for t in transactions]
-    }
-    return jsonify(data)
-
-@app.route('/static/<path:path>')
-def send_static(path):
-    return send_from_directory('static', path)
+        'transactions': transactions_list
+    })
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
     app.run(debug=True)
