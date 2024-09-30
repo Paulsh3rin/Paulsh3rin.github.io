@@ -48,6 +48,7 @@ form {
 
 form label {
     margin: 0.5em 0 0.2em;
+    color:#ffffff
 }
 
 form input, form textarea {
@@ -66,7 +67,6 @@ button {
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
     padding: 1em 0;
     position: fixed;
     width: 100%;
