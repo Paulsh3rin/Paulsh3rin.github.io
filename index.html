@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sherin Paul</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="static/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
         </h3>
         <span style="color: white;"> 
             <p>
-                Explore my projects, and blog here.
+                Explore my projects and blog here.
             </p>
         </span>
     </section>
@@ -41,22 +41,9 @@
         <h2>Projects</h2>
         <div class="project">
             <h3>#1 Personal Spending Analysis</h3>
-            <a href="/dashboard">Go to Dashboard</a>
+            <a href="templates/dashboard.html">Go to Dashboard</a> <!-- Updated path -->
+        </div>
     </section>
-
-    <!-- <section id="blog">
-        <h2>Blog</h2>
-        <div class="blog-post">
-            <h3>Blog Post Title 1</h3>
-            <p>Blog post excerpt...</p>
-            <a href="blog1.html">Read more</a>
-        </div>
-        <div class="blog-post">
-            <h3>Blog Post Title 2</h3>
-            <p>Blog post excerpt...</p>
-            <a href="blog2.html">Read more</a>
-        </div>
-    </section> -->
 
     <section id="contact">
         <h2>Contact</h2>
@@ -82,6 +69,6 @@
         </span>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="static/js/script.js"></script> <!-- Updated path -->
 </body>
 </html>
