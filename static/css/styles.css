@@ -78,3 +78,56 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between project cards */
+    justify-content: center; /* Center align cards */
+}
+
+.project-card {
+    background-color: #f9f9f9; /* Background color for the card */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    width: 300px; /* Fixed width for each card */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth transform transition */
+    text-decoration: none; /* Ensure no underline on the card */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.project-thumbnail {
+    width: 100%; /* Full width of card */
+    height: 150px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.project-link {
+    display: block; /* Make the link block-level */
+    margin: 10px; /* Margin around the link */
+    text-decoration: none; /* Remove underline from links */
+    color: #0073e6; /* Link color */
+}
+
+.project-link:hover {
+    text-decoration: underline; /* Underline on hover for better feedback */
+}
+
+.project-title {
+    font-size: 1.2em; /* Font size for project titles */
+    margin-top: 15px; /* Space above the title */
+    color: #000000; /* Specific color for project titles */
+    text-decoration: none; /* Ensure no underline */
+}
+
+p {
+    padding: 0 15px; /* Padding for paragraph text */
+    font-size: 0.95em; /* Font size for paragraphs */
+    color: #555; /* Text color for paragraph */
+}
