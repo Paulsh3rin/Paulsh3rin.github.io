@@ -3,13 +3,8 @@ description: A brief description of your site.
 url: "https://paulsh3rin.github.io" 
 baseurl: "" # Leave as an empty string if deploying to the root
 markdown: kramdown
-theme: minima # or another theme of your choice
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-permalink: /:year/:month/:day/:title/
-exclude:
-  - _site
-  - README.md
