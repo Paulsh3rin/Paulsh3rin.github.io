@@ -79,14 +79,14 @@ footer {
     bottom: 0;
 }
 
-.projects-container {
+.projects-container, .blogs-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Space between project cards */
     justify-content: center; /* Center align cards */
 }
 
-.project-card {
+.project-card, .blogs-container {
     background-color: #f9f9f9; /* Background color for the card */
     border: 1px solid #ddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
@@ -98,7 +98,7 @@ footer {
     text-decoration: none; /* Ensure no underline on the card */
 }
 
-.project-card:hover {
+.project-card:hover, .blogs-container {
     transform: translateY(-5px); /* Slight lift on hover */
 }
 
@@ -108,18 +108,18 @@ footer {
     object-fit: cover; /* Cover the area without distortion */
 }
 
-.project-link {
+.project-link, .blogs-container {
     display: block; /* Make the link block-level */
     margin: 10px; /* Margin around the link */
     text-decoration: none; /* Remove underline from links */
     color: #0073e6; /* Link color */
 }
 
-.project-link:hover {
+.project-link:hover, .blogs-container {
     text-decoration: underline; /* Underline on hover for better feedback */
 }
 
-.project-title {
+.project-title, .blogs-container {
     font-size: 1.2em; /* Font size for project titles */
     margin-top: 15px; /* Space above the title */
     color: #000000; /* Specific color for project titles */
