@@ -5,13 +5,16 @@ title: Blog
 
 <section id="blog" style="text-align: center;">
     <h2>Blog</h2>
-    <ul>
-        {% for post in site.posts %}
+    <div class="blogs-container">
+        <ul>
+            {% for post in site.posts %}
             <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
+                <a href="{{ post.url }}" class="blog-card blog-link">
+                    <img src="" alt="Blog Thumbnail" class="blog-thumbnail">
+                    <h3 class="blog-title">{{ post.title }}</h3>
+                </a>
             </li>
-        {% endfor %}
-    </ul>
-
+            {% endfor %}
+        </ul>
+    </div>
 </section>
