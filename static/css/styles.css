@@ -98,24 +98,24 @@ footer {
     text-decoration: none; /* Ensure no underline on the card */
 }
 
-.project-card:hover, .blog-card:hover {
+.project-card:hover, .blogs-card:hover {
     transform: translateY(-5px); /* Slight lift on hover */
 }
 
-.project-thumbnail, .blog-thumbnail {
+.project-thumbnail, .blogs-thumbnail {
     width: 100%; /* Full width of card */
     height: 150px; /* Fixed height for thumbnails */
     object-fit: cover; /* Cover the area without distortion */
 }
 
-.project-link, .blog-link {
+.project-link, .blogs-link {
     display: block; /* Make the link block-level */
     margin: 10px; /* Margin around the link */
     text-decoration: none; /* Remove underline from links */
     color: #0073e6; /* Link color */
 }
 
-.project-link:hover, .blog-link:hover {
+.project-link:hover, .blogs-link:hover {
     text-decoration: underline; /* Underline on hover for better feedback */
 }
 

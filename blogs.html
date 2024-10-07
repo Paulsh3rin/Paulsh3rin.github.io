@@ -4,14 +4,14 @@ title: Blog
 ---
 
 <section id="blogs" style="text-align: center;">
-    <h2>Blog</h2>
+    <h2>Blogs</h2>
     <div class="blogs-container">
         <ul>
             {% for post in site.posts %}
             <li>
-                <a href="{{ post.url }}" class="blog-card blog-link">
-                    <img src="" alt="Blog Thumbnail" class="blog-thumbnail">
-                    <h3 class="blog-title">{{ post.title }}</h3>
+                <a href="{{ post.url }}" class="blogs-card blogs-link">
+                    <img src="" alt="Blog Thumbnail" class="blogs-thumbnail">
+                    <h3 class="blogs-title">{{ post.title }}</h3>
                 </a>
             </li>
             {% endfor %}
