@@ -6,7 +6,7 @@ categories: blog
 ---
 
 <div class="blog-post">
-## What are Derivatives ?
+<h1> What are Derivatives ? </h1>
 **Derivatives** are financial instruments. They are essentially financial contracts between two or more parties. Like the name, they derive their value from an underlying asset. The underlying asset could be stocks, bonds, commodities, currency or interest rates or could even be weather condition. 
 
 ### Types:
