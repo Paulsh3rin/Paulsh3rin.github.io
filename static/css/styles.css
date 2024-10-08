@@ -79,6 +79,9 @@ footer {
     bottom: 0;
 }
 
+
+/*Projects*/
+/*Container & Card*/
 .projects-container{
     display: flex;
     flex-wrap: wrap;
@@ -132,7 +135,8 @@ p {
     color: #555; /* Text color for paragraph */
 }
 
-/* General styles */
+/* BLOGS */
+/*Container & Card*/
 .blogs-container {
     display: flex;
     flex-wrap: wrap;
@@ -167,4 +171,45 @@ p {
     margin-top: 15px; /* Space above the title */
     color: #000; /* Color for blog titles */
     text-decoration: none; /* Ensure no underline */
+}
+
+/*Blog-post Content*/
+/* Styles for individual blog posts */
+.blog-post {
+    max-width: 800px; /* Maximum width for readability */
+    margin: 20px auto; /* Center the post */
+    padding: 20px; /* Add padding */
+    background-color: #ffffff; /* Background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #333; /* Text color */
+}
+
+/* Headings in the blog post */
+.blog-post h1,
+.blog-post h2,
+.blog-post h3 {
+    color: #0073e6; /* Color for headings */
+}
+
+/* Paragraph styling */
+.blog-post p {
+    line-height: 1.6; /* Better line height for readability */
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
+/* List styling */
+.blog-post ul, 
+.blog-post ol {
+    padding-left: 20px; /* Indent lists */
+}
+
+/* Link styles within blog posts */
+.blog-post a {
+    color: #0073e6; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.blog-post a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
