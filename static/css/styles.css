@@ -140,17 +140,15 @@ p {
 .blogs-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Space between blog cards */
+    gap: 20px; /* Space between project cards */
+    justify-content: center; /* Center align cards */
 }
-
+    
 .blogs-card {
     background-color: #f9f9f9; /* Card background */
-    border: 1px solid #ddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
     overflow: hidden; /* Prevent overflow */
     width: 300px; /* Fixed width for each card */
-    text-align: center; /* Center text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.2s; /* Smooth transform transition */
     text-decoration: none; /* Ensure no underline on the card */
@@ -166,6 +164,17 @@ p {
     object-fit: cover; /* Cover the area without distortion */
 }
 
+.blogs-link{
+    display: block; /* Make the link block-level */
+    margin: 5px; /* Margin around the link */
+    text-decoration: none; /* Remove underline from links */
+    color: #0073e6; /* Link color */
+}
+
+.blogs-link:hover{
+    text-decoration: underline; /* Underline on hover for better feedback */
+}
+
 .blogs-title {
     font-size: 1.2em; /* Font size for blog titles */
     margin-top: 15px; /* Space above the title */
@@ -175,20 +184,19 @@ p {
 
 /*Blog-post Content*/
 /* Styles specific to blog post content */
-.blog-post {
-    background-color: #f0f0f0; /* Different background for blog content */
+.blogs-post {
     padding: 1em;
     border-radius: 8px; /* Rounded corners */
     margin: 1em 0; /* Margin for spacing */
 }
 
 /* Specific styles for headers within blog posts */
-.blog-post h1, .blog-post h2, .blog-post h3 {
+div.blogs-post h1, div.blog-post h2, div.blog-post h3 {
     color: #333; /* Color for blog headers */
 }
 
 /* Paragraph styles */
-.blog-post p {
+.blogs-post p {
     color: #555; /* Text color for paragraphs in blog posts */
     line-height: 1.6; /* Spacing for readability */
 }
