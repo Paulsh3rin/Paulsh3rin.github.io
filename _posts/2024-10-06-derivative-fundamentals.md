@@ -5,6 +5,7 @@ date: 2024-10-06
 categories: blog
 ---
 
+<div class="blog-post">
 ## What are Derivatives ?
 **Derivatives** are financial instruments. They are essentially financial contracts between two or more parties. Like the name, they derive their value from an underlying asset. The underlying asset could be stocks, bonds, commodities, currency or interest rates or could even be weather condition. 
 
@@ -40,3 +41,5 @@ categories: blog
 ### Risk:
 
 While derivatives can be used to reduce risk (hedging), they can also increase risk if used recklessly. Because they often involve leverage (borrowing money to invest), small changes in the price of the underlying asset can lead to significant gains—or losses.
+
+</div>
