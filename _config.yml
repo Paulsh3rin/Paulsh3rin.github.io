@@ -3,6 +3,8 @@ description: A brief description of your site.
 url: "https://paulsh3rin.github.io" 
 baseurl: "" # Leave as an empty string if deploying to the root
 markdown: kramdown
+kramdown:
+  input: GFM
 
 plugins:
   - jekyll-feed
