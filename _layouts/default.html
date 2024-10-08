@@ -28,6 +28,9 @@
             <div class="projects-container">
                 {{ content }} <!-- For project-related content -->
             </div>
+        {% else %}
+            {{ content }} <!-- Default case for other content types -->
+        {% endif %}
     </main>
 
 
