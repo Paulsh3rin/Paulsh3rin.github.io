@@ -174,42 +174,21 @@ p {
 }
 
 /*Blog-post Content*/
-/* Styles for individual blog posts */
+/* Styles specific to blog post content */
 .blog-post {
-    max-width: 800px; /* Maximum width for readability */
-    margin: 20px auto; /* Center the post */
-    padding: 20px; /* Add padding */
-    background-color: #ffffff; /* Background color */
+    background-color: #f0f0f0; /* Different background for blog content */
+    padding: 1em;
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    color: #333; /* Text color */
+    margin: 1em 0; /* Margin for spacing */
 }
 
-/* Headings in the blog post */
-.blog-post h1,
-.blog-post h2,
-.blog-post h3 {
-    color: #0073e6; /* Color for headings */
+/* Specific styles for headers within blog posts */
+.blog-post h1, .blog-post h2, .blog-post h3 {
+    color: #333; /* Color for blog headers */
 }
 
-/* Paragraph styling */
+/* Paragraph styles */
 .blog-post p {
-    line-height: 1.6; /* Better line height for readability */
-    margin-bottom: 1em; /* Space between paragraphs */
-}
-
-/* List styling */
-.blog-post ul, 
-.blog-post ol {
-    padding-left: 20px; /* Indent lists */
-}
-
-/* Link styles within blog posts */
-.blog-post a {
-    color: #0073e6; /* Link color */
-    text-decoration: none; /* Remove underline */
-}
-
-.blog-post a:hover {
-    text-decoration: underline; /* Underline on hover */
+    color: #555; /* Text color for paragraphs in blog posts */
+    line-height: 1.6; /* Spacing for readability */
 }
