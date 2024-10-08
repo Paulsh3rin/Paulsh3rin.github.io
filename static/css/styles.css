@@ -45,6 +45,14 @@ h1, h2, h3 {
     color: #ffffff;
 }
 
+article {
+    margin: 2em auto; /* Center the article with some margin */
+    max-width: 800px; /* Limit the width for readability */
+    padding: 1em; /* Add padding for breathing space */
+    background-color: #f9f9f9; /* Optional background color */
+    border-radius: 8px; /* Rounded corners for the article */
+}
+
 .project, .blog-post {
     margin-bottom: 2em;
     color:#ffffff
@@ -135,15 +143,15 @@ p {
     color: #555; /* Text color for paragraph */
 }
 
-/* BLOGS */
-/*Container & Card*/
+/* Blog Styles */
+/* Container & Card */
 .blogs-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Space between project cards */
+    gap: 20px; /* Space between blog cards */
     justify-content: center; /* Center align cards */
 }
-    
+
 .blogs-card {
     background-color: #f9f9f9; /* Card background */
     border-radius: 8px; /* Rounded corners */
@@ -164,14 +172,14 @@ p {
     object-fit: cover; /* Cover the area without distortion */
 }
 
-.blogs-link{
+.blogs-link {
     display: block; /* Make the link block-level */
-    margin: 5px; /* Margin around the link */
+    margin: auto; /* Margin around the link */
     text-decoration: none; /* Remove underline from links */
     color: #0073e6; /* Link color */
 }
 
-.blogs-link:hover{
+.blogs-link:hover {
     text-decoration: underline; /* Underline on hover for better feedback */
 }
 
@@ -182,21 +190,40 @@ p {
     text-decoration: none; /* Ensure no underline */
 }
 
-/*Blog-post Content*/
+/* Blog Post Content */
 /* Styles specific to blog post content */
 .blogs-post {
     padding: 1em;
     border-radius: 8px; /* Rounded corners */
-    margin: 1em 0; /* Margin for spacing */
 }
 
 /* Specific styles for headers within blog posts */
-div.blogs-post h1, div.blog-post h2, div.blog-post h3 {
+.blogs-post h1 {
+    color: #2c3e50; /* Specific color for h1 in blog posts */
+    font-size: 2em; /* Font size for h1 */
+    margin-bottom: 0.5em; /* Space below h1 */
+    text-align: center; /* Center the heading */
+}
+
+.blogs-post h2,
+.blogs-post h3 {
     color: #333; /* Color for blog headers */
 }
 
-/* Paragraph styles */
+/* Paragraph styles for blog posts */
 .blogs-post p {
     color: #555; /* Text color for paragraphs in blog posts */
     line-height: 1.6; /* Spacing for readability */
+    margin: 0 0 1.5em 0; /* Margin for spacing */
+}
+
+/* Unordered and Ordered Lists inside Blog Posts */
+.blogs-post ul,
+.blogs-post ol {
+    padding-left: 20px; /* Indent lists */
+}
+
+.blogs-post li {
+    margin-bottom: 0.5em; /* Space between list items */
+    color: #555; /* Text color for list items */
 }
