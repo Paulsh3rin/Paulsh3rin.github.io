@@ -20,7 +20,14 @@
     </header>
 
     <main>
-        {{ content }} <!-- This placeholder will be replaced by page-specific content -->
+        {% if page.layout == "post" %}
+            <article class="blog-post">
+                {{ content }} <!-- For blog posts -->
+            </article>
+        {% elsif page.layout == "projects" %}
+            <div class="projects-container">
+                {{ content }} <!-- For project-related content -->
+            </div>
     </main>
 
 
